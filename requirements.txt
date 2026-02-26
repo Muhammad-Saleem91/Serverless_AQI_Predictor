@@ -6,6 +6,7 @@ pandas
 numpy
 requests
 python-dotenv
+pymongo[srv]
 
 matplotlib
 seaborn
@@ -14,8 +15,10 @@ scikit-learn
 xgboost
 shap
 
-hopsworks
-hsfs
+# hopsworks
+# hsfs
+
+
 
 fastapi
 uvicorn

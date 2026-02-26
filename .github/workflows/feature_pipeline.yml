@@ -1,0 +1,37 @@
+name: Hourly Feature Ingestion
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 * * * *"   # hourly, minute 10 UTC
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Sanity check env (safe)
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          python -c "import os; u=os.environ.get('MONGODB_URI',''); print('MONGODB_URI set:', bool(u)); print('URI startswith mongodb+srv:', u.startswith('mongodb+srv://'))"
+
+      - name: Run hourly ingestion
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          python -m src.hourly_ingestion_catchup
