@@ -1,0 +1,6 @@
+{
+  "name": "xgb",
+  "path": "artifacts/xgb_model.pkl",
+  "mae": 1.249404443634881,
+  "rmse": 4.758453258406024
+}

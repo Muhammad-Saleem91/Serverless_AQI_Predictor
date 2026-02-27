@@ -96,7 +96,7 @@ def _time_split(X: pd.DataFrame, y: pd.Series, train_frac: float = TRAIN_FRAC):
 
 def _evaluate(y_true: np.ndarray, y_pred: np.ndarray) -> Tuple[float, float]:
     mae = float(mean_absolute_error(y_true, y_pred))
-    rmse = float(mean_squared_error(y_true, y_pred, squared=False))
+    rmse = float(mean_squared_error(y_true, y_pred))
     return mae, rmse
 
 

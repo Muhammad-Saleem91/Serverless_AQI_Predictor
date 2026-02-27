@@ -1,0 +1,66 @@
+{
+  "trained_at_utc": "2026-02-27T04:06:09.452726+00:00",
+  "location_id": "karachi",
+  "lookback_days": 180,
+  "horizon_hours": 1,
+  "feature_cols": [
+    "aqi_lag_1",
+    "aqi_lag_24",
+    "aqi_lag_3",
+    "aqi_roll_24",
+    "aqi_roll_6",
+    "carbon_monoxide",
+    "carbon_monoxide_was_missing",
+    "day_of_week",
+    "hour_cos",
+    "hour_sin",
+    "month",
+    "nitrogen_dioxide",
+    "nitrogen_dioxide_was_missing",
+    "ozone",
+    "ozone_was_missing",
+    "pm10",
+    "pm10_was_missing",
+    "pm25_wind_interaction",
+    "pm2_5",
+    "pm2_5_was_missing",
+    "relative_humidity_2m",
+    "relative_humidity_2m_was_missing",
+    "sulphur_dioxide",
+    "sulphur_dioxide_was_missing",
+    "surface_pressure",
+    "surface_pressure_was_missing",
+    "temperature_2m",
+    "temperature_2m_was_missing",
+    "us_aqi",
+    "us_aqi_was_missing",
+    "wind_speed_10m",
+    "wind_speed_10m_was_missing"
+  ],
+  "results": [
+    {
+      "name": "ridge",
+      "model_path": "artifacts/ridge_model.pkl",
+      "mae": 1.540938177929465,
+      "rmse": 6.6761062462743626
+    },
+    {
+      "name": "rf",
+      "model_path": "artifacts/rf_model.pkl",
+      "mae": 1.3715746905647068,
+      "rmse": 7.723919786684013
+    },
+    {
+      "name": "xgb",
+      "model_path": "artifacts/xgb_model.pkl",
+      "mae": 1.249404443634881,
+      "rmse": 4.758453258406024
+    }
+  ],
+  "best_model": {
+    "name": "xgb",
+    "path": "artifacts/xgb_model.pkl",
+    "mae": 1.249404443634881,
+    "rmse": 4.758453258406024
+  }
+}
