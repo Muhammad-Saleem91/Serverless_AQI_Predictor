@@ -17,6 +17,7 @@ shap
 
 # hopsworks
 # hsfs
+joblib
 
 
 
