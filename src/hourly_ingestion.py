@@ -9,7 +9,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-from src.ingest_openmeteo import fetch_karachi_aqi_weather
+from ingestion.fetch_data import fetch_karachi_aqi_weather
 
 
 DB_NAME = "aqi_feature_store"

@@ -57,7 +57,8 @@ def fetch_weather(start_date: str = None, end_date: str = None) -> pd.DataFrame:
     """
     Fetch hourly weather data from Open-Meteo
     """
-    url = "https://archive-api.open-meteo.com/v1/archive"
+    # url = "https://archive-api.open-meteo.com/v1/archive"
+    url = "https://api.open-meteo.com/v1/forecast"
 
     params = {
         "latitude": LATITUDE,
